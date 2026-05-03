@@ -116,5 +116,35 @@ menuButton?.addEventListener("click", () => {
   mobileMenu.hidden = expanded;
 });
 
+document.addEventListener("click", (event) => {
+  if (!menuButton || !mobileMenu) {
+    return;
+  }
+
+  const target = event.target;
+
+  if (!(target instanceof Node)) {
+    return;
+  }
+
+  if (menuButton.contains(target) || mobileMenu.contains(target)) {
+    return;
+  }
+
+  menuButton.setAttribute("aria-expanded", "false");
+  mobileMenu.hidden = true;
+});
+
+mobileMenu?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (!menuButton || !mobileMenu) {
+      return;
+    }
+
+    menuButton.setAttribute("aria-expanded", "false");
+    mobileMenu.hidden = true;
+  });
+});
+
 renderDemo(activeKey);
 startRotation();
