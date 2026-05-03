@@ -4,204 +4,189 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>genie</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="topbar">
-        <div class="brand-lockup">
-          <div class="brand-mark">g</div>
-          <div>
-            <p class="eyebrow">app creation for everyone</p>
-            <h1>genie</h1>
+    <div class="ambient-video" aria-hidden="true">
+      <video
+        class="ambient-video__media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      >
+        <source
+          src="https://a.storyblok.com/f/338771/x/d30c7a27b0/air_ui_organize_03_medium.mp4"
+          type="video/mp4"
+        />
+      </video>
+      <div class="ambient-video__wash"></div>
+    </div>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="/">
+          <span class="brand__mark">g</span>
+          <span class="brand__text">genie</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#product">Features</a>
+          <a href="#product">Solutions</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#resources">Resources</a>
+          <a href="#about">About</a>
+        </nav>
+
+        <div class="site-actions">
+          <a class="button button--ghost" href="#product">Log in</a>
+          <a class="button button--primary" href="#product">Get Genie</a>
+        </div>
+
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">
+          Menu
+        </button>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" hidden>
+        <a href="#product">Features</a>
+        <a href="#product">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#resources">Resources</a>
+        <a href="#about">About</a>
+        <a href="#product">Log in</a>
+        <a href="#product">Get Genie</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__inner">
+          <p class="hero__eyebrow">Genie for builders</p>
+          <h1 class="hero__title">
+            Everyone makes apps.
+            <em>AI scale.</em>
+          </h1>
+          <p class="hero__copy">
+            Organize prompts, approve ideas, and multiply what works across every
+            screen. Genie gives everyone a faster way to go from concept to app.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#product">Get Genie</a>
           </div>
         </div>
-        <nav class="topnav">
-          <a href="#prompts">Prompts</a>
-          <a href="#showcase">Showcase</a>
-          <a href="#build">Build</a>
-        </nav>
-      </header>
+      </section>
 
-      <main>
-        <section class="hero">
-          <div class="hero-copy">
-            <p class="hero-kicker">Featured Today</p>
-            <h2>Everyone makes an app.</h2>
-            <p class="hero-text">
-              Start from a prompt, remix a winning layout, then swipe through
-              launch-ready ideas like you are browsing the App Store.
+      <section class="product-demo" id="product">
+        <div class="product-demo__shell">
+          <div class="product-demo__intro">
+            <p class="section-label">Primary demo</p>
+            <h2>Prompt once. Launch everywhere.</h2>
+            <p>
+              Browse the flow the same way `air.inc` presents product areas:
+              a labeled tab rail, short explanation, and a large motion-driven
+              canvas that keeps the page alive.
             </p>
-            <div class="hero-actions">
-              <a class="primary-button" href="#prompts">Browse prompts</a>
-              <button class="ghost-button" type="button" data-scroll-target="showcase">
-                Swipe right
-              </button>
-            </div>
           </div>
 
-          <div class="hero-device">
-            <div class="device-frame">
-              <div class="device-top">
-                <span>genie studio</span>
-                <span>09:41</span>
-              </div>
-              <div class="device-card feature">
-                <p class="feature-label">Prompt of the day</p>
-                <h3>Build a neighborhood marketplace for indie creators.</h3>
-                <p>
-                  Product feed, chat checkout, creator pages, and launch assets
-                  in one flow.
+          <div class="product-demo__panel">
+            <div class="demo-tabs" role="tablist" aria-label="Genie product areas">
+              <button class="demo-tab is-active" type="button" role="tab" aria-selected="true" data-demo-tab="organize">
+                Organize
+              </button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" data-demo-tab="approve">
+                Approve
+              </button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" data-demo-tab="multiply">
+                Multiply
+              </button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" data-demo-tab="search">
+                Search
+              </button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" data-demo-tab="analytics">
+                Analytics
+              </button>
+              <button class="demo-tab" type="button" role="tab" aria-selected="false" data-demo-tab="agents">
+                Agents
+              </button>
+            </div>
+
+            <div class="demo-stage">
+              <div class="demo-stage__copy">
+                <p class="demo-stage__kicker" id="demo-kicker">Organize</p>
+                <h3 id="demo-title">Keep prompts, versions, and app concepts in one place.</h3>
+                <p id="demo-description">
+                  Build a shared system for prompt drafts, finished screens, and
+                  launch-ready assets so everyone starts from the same source.
                 </p>
-              </div>
-              <div class="device-stack">
-                <div class="mini-card coral">
-                  <span>Commerce</span>
-                  <strong>12 screens</strong>
-                </div>
-                <div class="mini-card sky">
-                  <span>Social</span>
-                  <strong>Realtime</strong>
-                </div>
-                <div class="mini-card gold">
-                  <span>Deploy</span>
-                  <strong>1 tap</strong>
+                <div class="demo-stage__meta">
+                  <span id="demo-duration">7s loop</span>
+                  <span>Swipe right ready</span>
                 </div>
               </div>
+
+              <div class="demo-stage__media">
+                <video
+                  id="demo-video"
+                  class="demo-video"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  preload="auto"
+                >
+                  <source
+                    id="demo-video-source"
+                    src="https://a.storyblok.com/f/338771/x/d30c7a27b0/air_ui_organize_03_medium.mp4"
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="prompt-hub" id="prompts">
-          <div class="section-heading">
-            <p class="eyebrow">Prompt tabs</p>
-            <h2>Choose a lane, then build fast.</h2>
-          </div>
+      <section class="feature-grid" id="pricing">
+        <article class="feature-card">
+          <p class="section-label">Prompt tabs</p>
+          <h3>Prompts stay visible instead of buried.</h3>
+          <p>
+            Switch between launch plans, creator apps, community flows, and commerce
+            ideas without losing the context of the build.
+          </p>
+        </article>
+        <article class="feature-card">
+          <p class="section-label">Swipe right</p>
+          <h3>Every concept feels like a featured release.</h3>
+          <p>
+            Review polished app directions in motion, choose one, and turn it into
+            a live build without switching tools.
+          </p>
+        </article>
+        <article class="feature-card">
+          <p class="section-label">AI scale</p>
+          <h3>Make one good app idea stretch further.</h3>
+          <p>
+            Reuse a winning concept for onboarding, listings, launch assets, and
+            new channels with a tighter approval loop.
+          </p>
+        </article>
+      </section>
 
-          <div class="tab-list" role="tablist" aria-label="Prompt categories">
-            <button class="tab-button is-active" role="tab" aria-selected="true" data-tab="launch">
-              Launch
-            </button>
-            <button class="tab-button" role="tab" aria-selected="false" data-tab="creator">
-              Creator
-            </button>
-            <button class="tab-button" role="tab" aria-selected="false" data-tab="community">
-              Community
-            </button>
-            <button class="tab-button" role="tab" aria-selected="false" data-tab="commerce">
-              Commerce
-            </button>
-          </div>
-
-          <div class="tab-panels">
-            <article class="tab-panel is-active" data-panel="launch">
-              <p class="panel-label">Launch fast</p>
-              <h3>Generate an MVP landing page, onboarding, and first-run flow.</h3>
-              <p>
-                Best for founders who need a sharp first version, clear store
-                messaging, and a product that already feels alive.
-              </p>
-            </article>
-            <article class="tab-panel" data-panel="creator">
-              <p class="panel-label">Creator tools</p>
-              <h3>Turn a workflow into a polished app with content, paywalls, and profiles.</h3>
-              <p>
-                Ideal for coaches, artists, and solo operators packaging an
-                audience into a product.
-              </p>
-            </article>
-            <article class="tab-panel" data-panel="community">
-              <p class="panel-label">Shared spaces</p>
-              <h3>Spin up forums, group chats, events, and member badges from one prompt.</h3>
-              <p>
-                Designed for clubs, fandoms, and niche groups that want strong
-                identity on day one.
-              </p>
-            </article>
-            <article class="tab-panel" data-panel="commerce">
-              <p class="panel-label">Sell something</p>
-              <h3>Start with listings, bundles, upsells, and a clean checkout loop.</h3>
-              <p>
-                Built for app ideas where the first transaction matters more
-                than weeks of setup.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="showcase" id="showcase">
-          <div class="section-heading split">
-            <div>
-              <p class="eyebrow">Swipe Right</p>
-              <h2>Browse build concepts like featured apps.</h2>
-            </div>
-            <div class="rail-controls">
-              <button class="rail-button" type="button" data-rail-dir="-1" aria-label="Scroll left">
-                ←
-              </button>
-              <button class="rail-button" type="button" data-rail-dir="1" aria-label="Scroll right">
-                →
-              </button>
-            </div>
-          </div>
-
-          <div class="card-rail" data-rail>
-            <article class="app-card mint">
-              <p class="card-badge">Wellness</p>
-              <h3>Daily Habit Coach</h3>
-              <p>Streaks, coaching check-ins, widgets, and calm visual pacing.</p>
-            </article>
-            <article class="app-card blue">
-              <p class="card-badge">Education</p>
-              <h3>Micro Learning Lab</h3>
-              <p>Short lessons, quizzes, progress maps, and social study rooms.</p>
-            </article>
-            <article class="app-card sunset">
-              <p class="card-badge">Lifestyle</p>
-              <h3>City Weekend Planner</h3>
-              <p>Event discovery, saved lists, host tools, and friend invites.</p>
-            </article>
-            <article class="app-card sand">
-              <p class="card-badge">Retail</p>
-              <h3>Drop Shop Builder</h3>
-              <p>Limited releases, countdowns, lookbooks, and creator storefronts.</p>
-            </article>
-            <article class="app-card lilac">
-              <p class="card-badge">Productivity</p>
-              <h3>Team Sprint Board</h3>
-              <p>Tasks, notes, standups, and AI summaries in one focused workspace.</p>
-            </article>
-          </div>
-        </section>
-
-        <section class="build-strip" id="build">
-          <div class="build-copy">
-            <p class="eyebrow">Build flow</p>
-            <h2>Prompt. Swipe. Ship.</h2>
-          </div>
-          <div class="build-steps">
-            <div class="step">
-              <span>01</span>
-              <p>Pick a prompt tab that matches the app you want to make.</p>
-            </div>
-            <div class="step">
-              <span>02</span>
-              <p>Swipe right through concepts until one feels worth launching.</p>
-            </div>
-            <div class="step">
-              <span>03</span>
-              <p>Open the build and generate screens, copy, and assets in one pass.</p>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
+      <section class="bottom-strip" id="resources">
+        <div>
+          <p class="section-label">Resources</p>
+          <h2>Built to feel editorial, not generic.</h2>
+        </div>
+        <p>
+          This homepage now follows the current `air.inc` direction much more
+          closely: restrained typography, wide beige sections, blue atmospheric
+          backdrop, and large product video treatment.
+        </p>
+      </section>
+    </main>
 
     <script src="./script.js"></script>
   </body>
